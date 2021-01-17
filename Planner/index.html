@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day Planner</title>
+  <!--Bootstrap CSS CDN link has to go here the remaining jquery and js links go right b4 </body>-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!--Day.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.3/dayjs.min.js" integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg==" crossorigin="anonymous"></script>
+  <!--Have to put jQuery here or $ dont work-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+  <!--display current day it updates every second-->
+  <header>
+    <h1>Workday Scheduler</h1>
+    <h2 id="dispdate"></h2>
+  </header>
+
+  
+  <container id="contain">
+    <row id = "rowid">
+       <!--//9am - 5pm blocks for input-->
+      <form class="row g-3">
+        <div class="col-auto">
+          <label for="datetime" class="visually-hidden"></label>
+          <input type="text" readonly class="form-control-plaintext" id="datetime"><!--keep as text for now maybe it should be date time-->
+        </div>
+        <div class="col-auto">
+          <label for="task" class="visually-hidden"></label>
+          <input type="text" class="form-control" id="task" placeholder="task">
+        </div>
+        <div class="col-auto">
+          <button type="button" class="btn btn-primary" id="saveTask">Save</button><!--was btn btn-primary mb-3-->
+        </div>
+      </form>
+    </row>
+  </container>
+
+ 
+ <!--my scripts can go here--> 
+  <script src = "scheduler.js"></script>
+
+  <!--Bootstrap Popper & js links-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+<!--
+GIVEN I am using a daily planner to create a schedule
+WHEN I open the planner
+THEN the current day is displayed at the top of the calendar
+WHEN I scroll down
+THEN I am presented with time blocks for standard business hours
+WHEN I view the time blocks for that day
+THEN each time block is color-coded to indicate whether it is in the past, present, or future
+WHEN I click into a time block
+THEN I can enter an event
+WHEN I click the save button for that time block
+THEN the text for that event is saved in local storage
+WHEN I refresh the page
+THEN the saved events persist
+
+
+Input	Example	Description
+YY	  18	Two-digit year
+YYYY	2018	Four-digit year
+M	    1-12	Month, beginning at 1
+MM  	01-12	Month, 2-digits
+MMM	  Jan-Dec	The abbreviated month name
+MMMM	January-December	The full month name
+D	    1-31	Day of month
+DD	  01-31	Day of month, 2-digits
+H	    0-23	Hours
+HH	  00-23	Hours, 2-digits
+h	    1-12	Hours, 12-hour clock
+hh	  01-12	Hours, 12-hour clock, 2-digits
+m	    0-59	Minutes
+mm	  00-59	Minutes, 2-digits
+s	    0-59	Seconds
+ss	  00-59	Seconds, 2-digits
+S	    0-9	Hundreds of milliseconds, 1-digit
+SS	  00-99	Tens of milliseconds, 2-digits
+SSS	  000-999	Milliseconds, 3-digits
+Z	    -05:00	Offset from UTC
+ZZ	  -0500	Compact offset from UTC, 2-digits
+A	    AM PM	Post or ante meridiem, upper-case
+a	    am pm	Post or ante meridiem, lower-case
+Do	  1st... 31st	Day of Month with ordinal-->
