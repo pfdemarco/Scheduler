@@ -21,6 +21,22 @@ $(document).ready(function() {
     },1000);
   }  
   
+  $(".clsForm button").on("click", function(){
+    console.log(this);
+    const y = $(this);
+    console.log(y.siblings(".form-grouptime"));
+    console.log(y.siblings(".form-grouptime").children(".description").val());
+  });
+
+  $("#save9").on("click", function(){
+    let x = $(".clsForm");
+    console.log(x.serializeArray());
+    console.log(x);
+    //console.log(x.serializeArray()[0])
+    console.log(x.serializeArray())
+  });
+
+
   setTime();//all function callers go here
 
 }); 
