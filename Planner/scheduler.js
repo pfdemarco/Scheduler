@@ -1,16 +1,6 @@
 $(document).ready(function() {
   //globals here
-  let ninetofive = {
-    nine:"9AM",
-    ten:"10AM",
-    eleven:"11AM",
-    twelve:"12PM",
-    one:"1PM",
-    two:"2PM",
-    three:"3PM",
-    four:"4PM",
-    five:"5PM"
-  }
+ 
   //make a past, present future var or make a 9-5 json object
   //functions here 
   function setTime(){
@@ -21,21 +11,16 @@ $(document).ready(function() {
     },1000);
   }  
   
+  //if any button on the form is clicked save the data from 
   $(".clsForm button").on("click", function(){
-    console.log(this);
+    //console.log(this);
     const y = $(this);
-    console.log(y.siblings(".form-grouptime"));
+    //console.log(y.siblings(".form-grouptime"));
     console.log(y.siblings(".form-grouptime").children(".description").val());
+    console.log(y.siblings(".form-group").children(".time-block").val());
   });
 
-  $("#save9").on("click", function(){
-    let x = $(".clsForm");
-    console.log(x.serializeArray());
-    console.log(x);
-    //console.log(x.serializeArray()[0])
-    console.log(x.serializeArray())
-  });
-
+  
 
   setTime();//all function callers go here
 
@@ -44,6 +29,13 @@ $(document).ready(function() {
 
 
 
+// $("#save9").on("click", function(){
+  //   let x = $(".clsForm");
+  //   console.log(x.serializeArray());
+  //   console.log(x);
+  //   //console.log(x.serializeArray()[0])
+  //   console.log(x.serializeArray())
+  // });
 
 
 
