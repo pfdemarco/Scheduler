@@ -15,12 +15,16 @@ $(document).ready(function() {
   $(".clsForm button").on("click", function(){
     //console.log(this);
     const y = $(this);
+    let desc = y.siblings(".form-grouptime").children(".description").val();
+    let timeBlock = y.siblings(".form-group").children(".time-block").val();
+
+    window.localStorage.setItem("Time: " + timeBlock , " Task: " + desc);
     //console.log(y.siblings(".form-grouptime"));
     console.log(y.siblings(".form-grouptime").children(".description").val());
     console.log(y.siblings(".form-group").children(".time-block").val());
   });
 
-  
+  //window.localStorage.clear;  //dont do this per instructions but it would be maybe something to include in init()
 
   setTime();//all function callers go here
 
