@@ -24,8 +24,13 @@ textarea{
   border-radius: 0;
   border-bottom: 10px solid black;
   background-image: url("../Oracle-Scheduler.jpg");
+  background-position: center;
+  background-repeat:space;
+  /*background-image: url('w3css.gif');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;*/
 }
-
 
 /*this is the style fo rthe time left most area*/
 div.form-group{
@@ -46,10 +51,6 @@ div.form-grouptime{
 #task9, #task10, #task11, #task12, #task1, #task2, #task3, #task4, #task5 {
   width:99%;
 }
-
-
-
-
 
 .row {
   white-space: pre-wrap;
