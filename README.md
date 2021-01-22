@@ -48,5 +48,7 @@ Mock-Up
 ![Planner](HW_Day_Planner.jpg)
 
 Links
+App
 https://pfdemarco.github.io/Scheduler/Planner/index.html
+Repo
 https://github.com/pfdemarco/Scheduler

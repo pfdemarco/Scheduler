@@ -7,21 +7,22 @@ $(document).ready(function() {
   function setTime(){
     var timerInterval = setInterval(function(){
       let nnow = dayjs();
-      let topr = $('#dispdate');
-      topr.text(nnow.$d);
-      if (nnow.$m == 0){//this should refresh the color scheme when a new hour happens 
-                        //maybe make it check for the first 5 seconds?(nnow.$m == 0 && nnow.$s <=5)
-        whatTimeIsIt = dayjs();
+      let topr = $('#dispdate');//this is just a h6 with id of dispdate it will show the live time every second
+      topr.text(nnow.$d);       //this makes the text the time 
+      if (nnow.$m == 0){        //this should refresh the color scheme when a new hour happens 
+                                //maybe make it check for the first 5 seconds?(nnow.$m == 0 && nnow.$s <=5)
+        whatTimeIsIt = dayjs(); //SO IMPORTANT TO DO THIS IF IT ISNT RESET THEN THE COLOR WONT CHANGE
 
-        console.log(nnow.$m);
+        console.log(nnow.$m);   //log the minute for testing purposes 
         
-        reloadPage();                   //i need something slicker than this because it will run 50+ times...
+        reloadPage();           //i need something slicker than this because it will run 50+ times... try this (nnow.$m == 0 && nnow.$s <=5)
       }
     },1000);
   }  
   
   function reloadPage(){
     //need to make the past present future color row effects//$H = 9,10,11,12,13,14,15,16,17 as 9,10,11,12,1,2,3,4,5
+    //im better than this if statement but I dont have a lot of time to mess with making it a function or not later rinse repeat code...
     if (whatTimeIsIt.$H == 9){
       //pink 
       //staticTime9 task9 save9
