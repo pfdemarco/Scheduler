@@ -9,8 +9,13 @@ $(document).ready(function() {
       let nnow = dayjs();
       let topr = $('#dispdate');
       topr.text(nnow.$d);
-      if (nnow.$m >= 0 && nnow.$m <= 1){//this should refresh the color scheme when a new hour approaches 
-        reloadPage();
+      if (nnow.$m == 0){//this should refresh the color scheme when a new hour happens 
+                        //maybe make it check for the first 5 seconds?(nnow.$m == 0 && nnow.$s <=5)
+        whatTimeIsIt = dayjs();
+
+        console.log(nnow.$m);
+        
+        reloadPage();                   //i need something slicker than this because it will run 50+ times...
       }
     },1000);
   }  
