@@ -20,19 +20,17 @@ $(document).ready(function() {
     },1000);
   }  
   
-
-
   function resetPage(){
     //if page refreshes please get the local storage and put it in the appropriate row
-    $("#task9").text(window.localStorage.getItem("Time: 9AM"));
-    $("#task10").text(window.localStorage.getItem("Time: 10AM"));
-    $("#task11").text(window.localStorage.getItem("Time: 11AM"));
-    $("#task12").text(window.localStorage.getItem("Time: 12PM"));
-    $("#task1").text(window.localStorage.getItem("Time: 1PM"));
-    $("#task2").text(window.localStorage.getItem("Time: 2PM"));
-    $("#task3").text(window.localStorage.getItem("Time: 3PM"));
-    $("#task4").text(window.localStorage.getItem("Time: 4PM"));
-    $("#task5").text(window.localStorage.getItem("Time: 5PM"));
+    $("#task9").val(window.localStorage.getItem("Time: 9AM"));
+    $("#task10").val(window.localStorage.getItem("Time: 10AM"));
+    $("#task11").val(window.localStorage.getItem("Time: 11AM"));
+    $("#task12").val(window.localStorage.getItem("Time: 12PM"));
+    $("#task1").val(window.localStorage.getItem("Time: 1PM"));
+    $("#task2").val(window.localStorage.getItem("Time: 2PM"));
+    $("#task3").val(window.localStorage.getItem("Time: 3PM"));
+    $("#task4").val(window.localStorage.getItem("Time: 4PM"));
+    $("#task5").val(window.localStorage.getItem("Time: 5PM"));
   }
   
   function reloadPage(){
@@ -221,14 +219,14 @@ $(document).ready(function() {
     let desc = y.siblings(".form-grouptime").children(".description").val();
     let timeBlock = y.siblings(".form-group").children(".time-block").val();
 
-    window.localStorage.setItem("Time: " + timeBlock , " Task: " + desc);
+    window.localStorage.setItem("Time: " + timeBlock , desc);
     //console.log(y.siblings(".form-grouptime"));
     console.log(y.siblings(".form-grouptime").children(".description").val());
     console.log(y.siblings(".form-group").children(".time-block").val());
   });
 
   resetPage();
-  
+
   reloadPage();
   //window.localStorage.clear;  //dont do this per instructions but it would be maybe something to include in init()
   //console.log(whatTimeIsIt.$H);
