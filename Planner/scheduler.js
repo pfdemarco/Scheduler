@@ -20,6 +20,21 @@ $(document).ready(function() {
     },1000);
   }  
   
+
+
+  function resetPage(){
+    //if page refreshes please get the local storage and put it in the appropriate row
+    $("#task9").text(window.localStorage.getItem("Time: 9AM"));
+    $("#task10").text(window.localStorage.getItem("Time: 10AM"));
+    $("#task11").text(window.localStorage.getItem("Time: 11AM"));
+    $("#task12").text(window.localStorage.getItem("Time: 12PM"));
+    $("#task1").text(window.localStorage.getItem("Time: 1PM"));
+    $("#task2").text(window.localStorage.getItem("Time: 2PM"));
+    $("#task3").text(window.localStorage.getItem("Time: 3PM"));
+    $("#task4").text(window.localStorage.getItem("Time: 4PM"));
+    $("#task5").text(window.localStorage.getItem("Time: 5PM"));
+  }
+  
   function reloadPage(){
     //need to make the past present future color row effects//$H = 9,10,11,12,13,14,15,16,17 as 9,10,11,12,1,2,3,4,5
     //im better than this if statement but I dont have a lot of time to mess with making it a function or not later rinse repeat code...
@@ -212,6 +227,8 @@ $(document).ready(function() {
     console.log(y.siblings(".form-group").children(".time-block").val());
   });
 
+  resetPage();
+  
   reloadPage();
   //window.localStorage.clear;  //dont do this per instructions but it would be maybe something to include in init()
   //console.log(whatTimeIsIt.$H);
