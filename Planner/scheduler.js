@@ -22,6 +22,10 @@ $(document).ready(function() {
   
   function resetPage(){
     //if page refreshes please get the local storage and put it in the appropriate row
+    //why doesnt text work here why val!!!???!!!@#R#%#$#$
+    //so .val() works on input elements (or any element with a value attribute?) and .text() will not work on input elements. 
+    //.val() gets the value of the input element -- regardless of type. 
+    //.text() gets the innerText (not HTML) of all the matched elements:
     $("#task9").val(window.localStorage.getItem("Time: 9AM"));
     $("#task10").val(window.localStorage.getItem("Time: 10AM"));
     $("#task11").val(window.localStorage.getItem("Time: 11AM"));
@@ -225,7 +229,7 @@ $(document).ready(function() {
     console.log(y.siblings(".form-group").children(".time-block").val());
   });
 
-  resetPage();
+  resetPage();//everytime the page reloads grab the localstorage and stick it in the right area.
 
   reloadPage();
   //window.localStorage.clear;  //dont do this per instructions but it would be maybe something to include in init()
